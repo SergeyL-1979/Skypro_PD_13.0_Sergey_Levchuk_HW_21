@@ -99,6 +99,38 @@ class Shop(Store):
     def get_unique_items_count(self):  # - возвращает количество уникальных товаровS
         return len(self.items)
 
+class Request:
+    """
+    Создайте класс Request в котором будет храниться запрос
+    **Поля:**
+    from - откуда везем (строка)
+    to - куда везем (строка)
+    amount = 3,
+    product = "печеньки" (строка)
+
+    При инициализации принимает список всех складов и строку типа
+    **Доставить** 3 печеньки **из** склад **в** магазин
+
+    И возвращает объект класса Request
+    from = "склад",
+    to =  "магазин",
+    amount = 3,
+    product = "печеньки"
+    """
+    def __init__(self, _from, _to, amount, product):
+        self._from = _from
+        self._to = _to
+        self.amount = amount
+        self.product = product
+
+    def get_request(self):
+        return {
+            'from': self._from,
+            'to': self._to,
+            'amount': self.amount,
+            'product': self.product
+        }
+
 
 if __name__ == '__main__':
     stock = Store()
