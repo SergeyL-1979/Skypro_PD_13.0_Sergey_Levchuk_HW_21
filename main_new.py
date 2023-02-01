@@ -132,9 +132,15 @@ if __name__ == '__main__':
     # print(f"Свободное место в магазине: {shop.get_free_space()}")
 
     print("\n", "=" * 20, "Делаем ЗАКАЗ", "=" * 20)
+    user_input = 'Доставить 3 печенька со склад в магазин'
+    request = Request(user_input)
+    request.source.remove(request.position, request.quantity)
+    request.destination.add(request.position, request.quantity)
+
+
 
     # ==============================================================
-    question = input(f"Доставить 3 печеньки из склада в магазин ").lower()
+    # question = input(f"Доставить 3 печеньки из склада в магазин ").lower()
 
 
     # quest = question.split()
